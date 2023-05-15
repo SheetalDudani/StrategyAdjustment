@@ -1,0 +1,95 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      TheOptionBox
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="tob">
+  <ion-header collapse="condense">
+  </ion-header>
+  <h1><b>Strategy Adjustment</b></h1>
+  <div id="div">
+    <h2>Provide details of your strategy</h2>
+    <ion-button id="button" *ngIf="!editMode" (click)="presentModal()">Add Leg</ion-button>
+    <ion-button id="edit" *ngIf="editMode" (click)="eStrategy()">Edit Strategy</ion-button>
+  </div>
+  
+    <div class="table">
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col class="bold-header">Index</ion-col>
+          <ion-col class="bold-header">Expiry</ion-col>
+          <ion-col class="bold-header">Strike</ion-col>
+          <ion-col class="bold-header">Type</ion-col>
+          <ion-col class="bold-header">Transaction</ion-col>
+          <ion-col class="bold-header">No. of Lots</ion-col>
+          <ion-col class="bold-header">Entry Price</ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>Nifty</ion-col>
+          <ion-col>13-April</ion-col>
+          <ion-col>17400</ion-col>
+          <ion-col>Put</ion-col>
+          <ion-col>Sell</ion-col>
+          <ion-col>2</ion-col>
+          <ion-col>1.90</ion-col>
+        </ion-row>
+        <ion-row *ngFor="let leg of legs">
+          <ion-col>{{ leg.index }}</ion-col>
+          <ion-col>{{ leg.expiryDate }}</ion-col>
+          <ion-col>{{ leg.strike }}</ion-col>
+          <ion-col>{{ leg.type }}</ion-col>
+          <ion-col>{{ leg.transactionNumber }}</ion-col>
+          <ion-col>{{ leg.lots }}</ion-col>
+          <ion-col>{{ leg.entryPrice }}</ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+
+    <ion-button *ngIf="!sAdjustments && !editMode" (click)="showAdjustment()">Show Adjustment</ion-button>
+    <br>
+    <br>
+    <div class="div" *ngIf="sAdjustments">
+      <div>
+        <h2><b>Adjustment Suggestions</b></h2>
+      </div>
+      <div class="table">
+    <ion-grid [fixed]="true" >
+      <ion-row>
+        <ion-col class="bold-header">Index</ion-col>
+        <ion-col class="bold-header">Expiry</ion-col>
+        <ion-col class="bold-header">Strike</ion-col>
+        <ion-col class="bold-header">Type</ion-col>
+        <ion-col class="bold-header">Transaction</ion-col>
+        <ion-col class="bold-header">No. of Lots</ion-col>
+        <ion-col class="bold-header">Entry Price</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Nifty</ion-col>
+        <ion-col>13-April</ion-col>
+        <ion-col>17600</ion-col>
+        <ion-col>Put</ion-col>
+        <ion-col>Sell</ion-col>
+        <ion-col>2</ion-col>
+        <ion-col>3.45</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>Nifty</ion-col>
+        <ion-col>13-April</ion-col>
+        <ion-col>17550</ion-col>
+        <ion-col>Call</ion-col>
+        <ion-col>Buy</ion-col>
+        <ion-col>2</ion-col>
+        <ion-col>117.65</ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+  </div>
+
+    
+  
+</ion-content>
+
+

@@ -1,0 +1,43 @@
+ion-col {
+  color: #0b0b0b;
+  text-align: left;
+}
+ion-row{
+  padding: 10px;
+}
+.bold-header{
+  font-weight: bold;
+}
+div{
+  display: flex;
+}
+#button, #edit{
+  display: flex;
+  float: right;
+  padding-left: 450px;
+  margin: 16px;
+}
+.table{
+  margin-left: 0px;
+}
+ion-grid{
+  padding-right: 595px;
+}
+.div{
+  display: block;
+}
+
+// modal css
+// .my-custom-modal .my-modal-header {
+//   background-color: #f53d3d;
+// }
+
+// .my-custom-modal .my-modal-title {
+//   color: #c32f2f;
+//   font-size: 1.5rem;
+// }
+
+// .my-custom-modal .my-modal-input,
+// .my-custom-modal .my-modal-select {
+//   margin-bottom: 1rem;
+// }

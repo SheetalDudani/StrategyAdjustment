@@ -1,0 +1,35 @@
+ion-radio-group {
+    display: flex;
+    flex-direction: row;
+  }
+  .container{
+    width: 460px;
+    // height: 700px;
+  }
+  ion-list{
+    padding: 0px;
+  }
+  h1{
+    margin-left: 20px;
+  }
+  .date{
+    border-radius: 0px;
+  }
+  ion-grid{
+    margin: 20px;
+  }
+  ion-datetime-button{
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+  .date{
+    width: 202px;
+  }
+  .add{
+    margin-left: 120px;
+  }
+  @media screen and (max-width: 768px) {
+    .container {
+      max-width: 100%;
+    }
+  }

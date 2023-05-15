@@ -1,0 +1,149 @@
+
+ <ion-content>
+  <div class="container">
+    <form>
+        <h1>Add strategy leg</h1>
+        <ion-grid class="customgrid">
+            <ion-row>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>Index</ion-label>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>
+                            <ion-radio-group [(ngModel)]="index" [ngModelOptions]="{standalone: true}">
+                                <ion-radio value="Nifty">&nbsp;Nifty</ion-radio><br/>
+                                <ion-radio value="Banknifty">&nbsp;&nbsp;Banknifty</ion-radio><br/>
+                              </ion-radio-group>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>Expiry</ion-label>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>                     
+                            <ion-datetime-button class="date" datetime="datetime" displayFormat="DD MMM"  pickerFormat="DD MMM" displaytime="false">
+
+                            </ion-datetime-button>
+
+                            <ion-modal [keepContentsMounted]="true">
+                              <ng-template>
+                                <ion-datetime displayFormat="DD MMM" id="datetime"
+                                pickerFormat="DD MMM" 
+                                [(ngModel)]="expiryDate" 
+                                [ngModelOptions]="{standalone: true}" displaytime="false"></ion-datetime>
+                              </ng-template>
+                            </ion-modal>
+                             <!-- <ion-input type="text" [(ngModel)]="expiryDate" [ngModelOptions]="{ standalone: true }"></ion-input> -->
+                        </ion-item> 
+                       
+                        
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>Strike</ion-label>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>
+                            <ion-textarea placeholder="Enter strike value" [(ngModel)]="strike" [ngModelOptions]="{standalone: true}"></ion-textarea>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>Type</ion-label>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>
+                            <ion-radio-group [(ngModel)]="type" [ngModelOptions]="{standalone: true}">
+                                <ion-radio value="Put">&nbsp;Put</ion-radio><br/>
+                                <ion-radio value="Call">&nbsp;&nbsp;Call</ion-radio><br/>
+                              </ion-radio-group>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>Transaction</ion-label>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>
+                            <ion-radio-group [(ngModel)]="transactionNumber" [ngModelOptions]="{standalone: true}">
+                                <ion-radio value="Sell">&nbsp;Sell</ion-radio><br/>
+                                <ion-radio value="Buy">&nbsp;&nbsp;Buy</ion-radio><br/>
+                              </ion-radio-group>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>No. of Lots</ion-label>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>
+                            <ion-textarea [(ngModel)]="lots" placeholder="Enter number of lots" [ngModelOptions]="{standalone: true}"></ion-textarea>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>
+                            <ion-label>Entry Price</ion-label>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+                <ion-col>
+                    <ion-list>
+                        <ion-item>
+                            <ion-textarea [(ngModel)]="entryPrice" placeholder="Entry price" [ngModelOptions]="{standalone: true}"></ion-textarea>
+                        </ion-item>
+                    </ion-list>
+                </ion-col>
+            </ion-row>
+            <div class="both">
+            <ion-button (click)="dismissModal()">Cancel</ion-button>
+          <ion-button (click)="addLeg()" class="add">Add leg</ion-button>
+        </div>
+        </ion-grid>
+      </form>
+    </div>
+</ion-content>
